@@ -1,0 +1,38 @@
+server:
+  port: 8089
+#security:
+#  oauth2:
+#    resource:
+#      token-info-uri: http://127.0.0.1:2223/nic_auth/oauth/check_token
+#      user-info-uri: http://127.0.0.1:2223/nic_auth/oauth/user
+#    client:
+#      client-id: iphone
+#      client-secret: pin 
+spring:
+  application:
+    name: Gateway-Service
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowCredentials: true
+            allowedMethods: "*"
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+     defaultZone: http://localhost:8000/eureka/
+zuul:
+  routes:
+    udise:
+      url: http://localhost:9000
+    master:
+      url: http://localhost:5000
+ribbon:
+  eureka:
+    enabled: false

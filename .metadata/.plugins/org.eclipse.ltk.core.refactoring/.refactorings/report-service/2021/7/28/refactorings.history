@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;RawSchoolEnrolment.java&apos; to &apos;udise-services/src/main/java/com.udiseservices.reports.models&apos;&#x0D;&#x0A;- Original project: &apos;report-service&apos;&#x0D;&#x0A;- Destination element: &apos;udise-services/src/main/java/com.udiseservices.reports.models&apos;&#x0D;&#x0A;- Original element: &apos;com.report.service.model.RawSchoolEnrolment.java&apos;" description="Copy compilation unit" destination="=udise-services/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.udiseservices.reports.models" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.report.service.model{RawSchoolEnrolment.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1625594678210" units="1" version="1.0"/>
+</session>
