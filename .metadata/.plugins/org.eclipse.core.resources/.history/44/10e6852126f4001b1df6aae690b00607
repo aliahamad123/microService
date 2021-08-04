@@ -1,0 +1,16 @@
+package com.udiseservices.outerServices;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.udiseservices.models.IncentivesFacilitiesProvidedChildren;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@FeignClient(name="dcf-service")
+public interface IncentivesFacilitiesProvidedChildrenOuterService {
+	
+	@GetMapping(value = "/fetchFacilitiesProvidedChildren/{schoolId}/{year}")
+	public IncentivesFacilitiesProvidedChildren fetchFacilitiesProvidedChildren();
+
+}

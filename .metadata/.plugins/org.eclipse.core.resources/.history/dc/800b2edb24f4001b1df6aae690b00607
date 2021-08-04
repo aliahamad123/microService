@@ -1,0 +1,18 @@
+package com.udp.controller;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public class DcfSchIncentivesFacilitiesProvidedChildren {
+
+	@GetMapping(value = "/fetchFacilitiesProvidedChildren/{schoolId}/{year}")
+	public DcfSchIncentivesFacilitiesProvidedChildren fetchFacilitiesProvidedChildren() {
+		DcfSchIncentivesFacilitiesProvidedChildren incentivesFacilitiesProvidedChildren = null;
+		return incentivesFacilitiesProvidedChildren;
+
+	}
+
+}

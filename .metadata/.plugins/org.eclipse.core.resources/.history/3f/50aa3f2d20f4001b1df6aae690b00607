@@ -1,0 +1,13 @@
+package com.udp.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+
+public class IncentivesFacilitiesProvidedChildren {
+	
+	@GetMapping(value = "/fetchFacilitiesProvidedChildrenOneToFive/{schoolId}/{year}")
+	public void fetchFacilitiesProvidedChildrenOneToFive() {
+		
+		
+	}
+
+}

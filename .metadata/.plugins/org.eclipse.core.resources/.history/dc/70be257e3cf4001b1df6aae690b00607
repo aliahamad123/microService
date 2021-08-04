@@ -1,0 +1,16 @@
+package com.udiseservices.outerServices;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import com.udiseservices.models.SchoolfundReceivFinancialYear201718ExcludMDM;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@FeignClient(name="dcf-service")
+public interface ReceiptsAndExpenditureOuterService {
+	
+	@GetMapping(value = "/fetchSchoolfundReceivFinancialYear201718ExcludMDM/{schoolId}/{year}")
+	public SchoolfundReceivFinancialYear201718ExcludMDM fetchSchoolfundReceivFinancialYear201718ExcludMDM(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+
+}

@@ -1,0 +1,5 @@
+package com.udiseservices.outerServices;
+
+public interface VocEduUnderNSQFOuterService {
+
+}

@@ -1,0 +1,83 @@
+package com.udiseservices.controller;
+
+import java.text.SimpleDateFormat;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.udiseservices.beans.CommenResponseBean;
+import com.udiseservices.beans.DataBean;
+import com.udiseservices.beans.SchsafetyBean;
+import com.udiseservices.models.SchSafety;
+import com.udiseservices.outerServices.SchSafetyOuterService;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public class UdiseSchSafetyController {
+
+	@Autowired
+	SchSafetyOuterService schSafetyOuterService;
+	private SchSafety schSafetyData;
+
+	@GetMapping(value = "/getSchProfileOneData/{schoolId}/{year}")
+	public CommenResponseBean fetchSchSafetyData(@PathVariable("schoolId") String schoolId,
+			@PathVariable("year") String year) {
+
+		SchsafetyBean schSafetyBeanData = new SchsafetyBean();
+		DataBean data = new DataBean();
+		CommenResponseBean schSafetyResponseBean = new CommenResponseBean();
+		try {
+			
+			schSafetyData = schSafetyOuterService.fetchSchSafety(schoolId, year);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		if(schSafetyData != null) {
+			
+			schSafetyBeanData.setUdiseSchCode(schSafetyData.getUdiseSchCode());
+			schSafetyBeanData.setSchoolId(schSafetyData.getSchoolId());
+			schSafetyBeanData.setSdmpPlanYn(schSafetyData.getSdmpPlanYn());
+			schSafetyBeanData.setStructSafaudYn(schSafetyData.getStructSafaudYn());
+			schSafetyBeanData.setNonstrSafaudYn(schSafetyData.getNonstrSafaudYn());
+			schSafetyBeanData.setFireExtYn(schSafetyData.getFireExtYn());
+			schSafetyBeanData.setSaftyTrngYn(schSafetyData.getSaftyTrngYn());
+			schSafetyBeanData.setDismgmtTaugYn(schSafetyData.getDismgmtTaugYn());
+			schSafetyBeanData.setSlfdefGrtYn(schSafetyData.getSlfdefGrtYn());
+			schSafetyBeanData.setSlfdefTrained(schSafetyData.getSlfdefTrained());
+			schSafetyBeanData.setExtraColumn1(schSafetyData.getExtraColumn1());
+			schSafetyBeanData.setCctvCamYn(schSafetyData.getCctvCamYn());
+			schSafetyBeanData.setNodalTchYn(schSafetyData.getNodalTchYn());
+			schSafetyBeanData.setGuidanceYn(schSafetyData.getGuidanceYn());
+			schSafetyBeanData.setGuideDisplayYn(schSafetyData.getGuideDisplayYn());
+			schSafetyBeanData.setTchRcvdGrantYn(schSafetyData.getTchRcvdGrantYn());
+			schSafetyBeanData.setGuidanceYn(schSafetyData.getGuidanceYn());
+			schSafetyBeanData.setSensitizeYn(schSafetyData.getSensitizeYn());
+			schSafetyBeanData.setStuAwarenessYn(schSafetyData.getStuAwarenessYn());
+			schSafetyBeanData.setStuFeedbackYn(schSafetyData.getStuFeedbackYn());
+			schSafetyBeanData.setCompBoxYn(schSafetyData.getCompBoxYn());
+			schSafetyBeanData.setGuideToStuYn(schSafetyData.getGuideToStuYn());
+			
+		}
+		
+		SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss aa");
+		profileResponseBean.setApiId("1234");
+		profileResponseBean.setApiName("Profile One By School Id");
+		profileResponseBean.setApiVersion("v1.0.0.1");
+		profileResponseBean.setDevelopedBy("UDISE Plus Team, NIC");
+		profileResponseBean.setMethod("GET");
+		profileResponseBean.setReleasedDate(dateFormate.format(new Date()));
+		profileResponseBean.setRequestedDate(dateFormate.format(new Date()));
+		profileResponseBean.setAuthenticationType("NONE");
+		Random rand = new Random();
+		profileResponseBean.setResponseId(rand.nextInt(100000));
+		data.setTotalSize(ProfileOneList.size());
+		data.setRecords(ProfileOneList);
+		profileResponseBean.setData(data);
+
+	}
+}

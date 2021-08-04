@@ -24,15 +24,9 @@ public class DcfSchProfileController {
 
 	@GetMapping(value = "/fetchSchProfileOne/{schoolId}/{year}")
 	public SchProfileOne fetchSchProfileOne(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
-		System.out.println("School Id is " + schoolId + "=======================");
-		System.out.println("Year is " + year +"============================");
 		Query query = new Query();
 		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchProfileOne profileData = mongoTemplate.findOne(query, SchProfileOne.class);
-		if(profileData != null) {
-			System.out.println(profileData.getAcYear() + "=============================");
-			System.out.println(profileData.getSchoolId() + "===============================");
-		}
 		return profileData;
 	}
 

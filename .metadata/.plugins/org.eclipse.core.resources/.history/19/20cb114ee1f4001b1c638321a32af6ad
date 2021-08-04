@@ -1,0 +1,34 @@
+package com.udiseservices.beans;
+
+import org.springframework.data.mongodb.core.mapping.Field;
+
+public class SchsafetyBean {
+	
+	private Integer schoolId;
+	private String udiseSchCode;
+	private String acYear;
+	private String sdmpPlanYn;
+	private String structSafaudYn;
+	private String nonstrSafaudYn;
+	private String fireExtYn;
+	private String saftyTrngYn;
+	private String dismgmtTaugYn;
+	private String slfdefGrtYn;
+	private String slfdefTrained;
+	private String extraColumn1;
+	private String createdTime;
+	private String modifiedBy;
+	private String modifiedTime;
+	private String cctvCamYn;
+	private String nodalTchYn;
+	private String guideDisplayYn;
+	private String tchRcvdGrantYn;
+	private String guidanceYn;
+	private String sensitizeYn;
+	private String stuAwarenessYn;
+	private String stuFeedbackYn;
+	private String compBoxYn;
+	private String guideToStuYn;
+
+
+}

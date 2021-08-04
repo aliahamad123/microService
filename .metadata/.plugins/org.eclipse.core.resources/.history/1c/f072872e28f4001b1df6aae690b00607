@@ -1,0 +1,32 @@
+package com.udp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.udp.models.IncentivesFacilitiesProvidedChildrenOneToFive;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public class DcfSchIncentivesFacilitiesProvidedChildren {
+
+	@Autowired
+	MongoTemplate mongoTemplate;
+	
+	@GetMapping(value = "/fetchFacilitiesProvidedChildrenOneToFive/{schoolId}/{year}")
+	public IncentivesFacilitiesProvidedChildrenOneToFive fetchFacilitiesProvidedChildrenOneToFive(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+		
+		IncentivesFacilitiesProvidedChildrenOneToFive incentivesFacilitiesProvidedChildren = null;
+		Query query = new Query();
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		incentivesFacilitiesProvidedChildren =mongoTemplate.findOne(query, IncentivesFacilitiesProvidedChildrenOneToFive.class);
+		return incentivesFacilitiesProvidedChildren;
+
+	}
+
+}

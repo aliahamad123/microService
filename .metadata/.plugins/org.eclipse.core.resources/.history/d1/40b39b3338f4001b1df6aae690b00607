@@ -1,0 +1,32 @@
+package com.udiseservices.outerServices;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import com.udiseservices.models.BoardExamPrevAcademicYear;
+import com.udiseservices.models.NumOfRegularStudentsPassed;
+import com.udiseservices.models.OthrThanNumOfRegularStudentsPassed;
+import com.udiseservices.models.RsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt;
+import com.udiseservices.models.RsltOfGradeXIIBrdExamPrevAcadYearRgulrStdnt;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@FeignClient(name="dcf-service")
+public interface BoardExaminationResultOuterService {
+	
+	@GetMapping(value = "/fetchFacilitiesProvidedChildrenOneToFive/{schoolId}/{year}")
+	public BoardExamPrevAcademicYear fetchBoardExamPreviousAcademicYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	
+	@GetMapping(value = "/fetchNumOfRegularStudentsPassed/{schoolId}/{year}")
+	public NumOfRegularStudentsPassed fetchNumOfRegularStudentsPassed(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	
+	@GetMapping(value = "/fetchOthrThanNumOfRegularStudentsPassed/{schoolId}/{year}")
+	public OthrThanNumOfRegularStudentsPassed fetchOthrThanNumOfRegularStudentsPassed(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	
+	@GetMapping(value = "/fetchRsltOfGradeXIIBrdExamPrevAcadYear/{schoolId}/{year}")
+	public RsltOfGradeXIIBrdExamPrevAcadYearRgulrStdnt fetchRsltOfGradeXIIBrdExamPrevAcadYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	
+	@GetMapping(value = "/fetchRsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt/{schoolId}/{year}")
+	public RsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt fetchRsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year)
+
+}

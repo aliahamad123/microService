@@ -1,0 +1,10 @@
+package com.udiseservices.outerServices;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@FeignClient(name="master-service")
+public interface IncentivesFacilitiesProvidedChildren {
+
+}

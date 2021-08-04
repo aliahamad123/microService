@@ -1,0 +1,22 @@
+package com.udp.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public class DcfBoardExaminationRsltController {
+	
+	@Autowired
+	MongoTemplate mongoTemplate;
+	
+	@GetMapping(value = "/fetchFacilitiesProvidedChildrenOneToFive/{schoolId}/{year}")
+	public void fetchBoardExamPreviousAcademicYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year) {
+		
+	}
+
+}

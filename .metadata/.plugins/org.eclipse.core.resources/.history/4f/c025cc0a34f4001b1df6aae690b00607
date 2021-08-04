@@ -1,0 +1,11 @@
+package com.udiseservices.outerServices;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+public interface BoardExaminationResultOuterService {
+	
+	@GetMapping(value = "/fetchFacilitiesProvidedChildrenOneToFive/{schoolId}/{year}")
+	public void fetchBoardExamPreviousAcademicYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+
+}

@@ -1,0 +1,19 @@
+package com.udiseservices.controller;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.udiseservices.beans.CommenResponseBean;
+
+@RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+public class UdiseSchSafetyController {
+
+	@GetMapping(value = "/getSchProfileOneData/{schoolId}/{year}")
+	public CommenResponseBean fetchSchSafetyData(@PathVariable("schoolId") String schoolId,
+			@PathVariable("year") String year) {
+		
+	}
+}

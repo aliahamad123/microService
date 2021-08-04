@@ -2,8 +2,6 @@ package com.udiseservices.beans;
 
 import java.util.Date;
 
-import org.springframework.data.annotation.LastModifiedDate;
-
 public class RawSchoolEnrolment {
 	
 	public String udiseSchCode;
@@ -47,16 +45,16 @@ public class RawSchoolEnrolment {
 	public Integer totGirlsC11;
 	public Integer totBoysC12;
 	public Integer totGirlsC12;
-	@LastModifiedDate
-	private Date updatedAt;
+//	@LastModifiedDate
+//	private Date updatedAt;
 
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
+//	public Date getUpdatedAt() {
+//		return updatedAt;
+//	}
+//
+//	public void setUpdatedAt(Date updatedAt) {
+//		this.updatedAt = updatedAt;
+//	}
 
 	public String getUdiseSchCode() {
 		return udiseSchCode;
