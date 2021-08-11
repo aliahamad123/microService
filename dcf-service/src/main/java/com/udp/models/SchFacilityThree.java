@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "sch_facility_3")
+@Document(collection = "full_facility")
 public class SchFacilityThree {
 	
 	@Id
@@ -12,7 +12,7 @@ public class SchFacilityThree {
 	private String _id;
 	
 	@Field(value = "school_id")
-	private String schoolId;
+	private Integer schoolId;
 	
 	@Field(value = "udise_sch_code")
 	private String udiseSchCode;
@@ -134,11 +134,11 @@ public class SchFacilityThree {
 		this._id = _id;
 	}
 
-	public String getSchoolId() {
+	public Integer getSchoolId() {
 		return schoolId;
 	}
 
-	public void setSchoolId(String schoolId) {
+	public void setSchoolId(Integer schoolId) {
 		this.schoolId = schoolId;
 	}
 

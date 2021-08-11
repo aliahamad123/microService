@@ -24,22 +24,22 @@ public class DcfSchTeacherController {
 	MongoTemplate mongoTemplate;
 
 	@GetMapping(value = "/fetchSchTeacherOne/{schoolId}/{year}")
-	public TeacherOne fetchSchTeacherOne(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+	public TeacherOne fetchSchTeacherOne(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		//query.addCriteria(Criteria.where("acYear").is(year));
 		//.with(Sort.by(Direction.ASC, "acYear"));
 		TeacherOne profileDataList = mongoTemplate.findOne(query, TeacherOne.class);
 		return profileDataList;
 	}
 	
-	@GetMapping(value = "/fetchSchTeacherProfile/{schoolId}")
-	public List<TeacherProfileTwo> fetchSchTeacherProfile(@PathVariable("schoolId") String schoolId) {
+	@GetMapping(value = "/fetchSchTeacherProfile/{schoolId}/{year}")
+	public List<TeacherProfileTwo> fetchSchTeacherProfile(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId)).with(Sort.by(Direction.ASC, "acYear"));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		//query.addCriteria(Criteria.where("acYear").is(year));
 		//.with(Sort.by(Direction.ASC, "acYear"));
-		List<TeacherProfileTwo> profileDataList = mongoTemplate.find(query, TeacherProfileTwo.class,"teacherInstraction");
+		List<TeacherProfileTwo> profileDataList = mongoTemplate.find(query, TeacherProfileTwo.class);
 		return profileDataList;
 	}
 

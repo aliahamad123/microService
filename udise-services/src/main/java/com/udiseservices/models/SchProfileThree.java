@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "sch_profile_3")
+@Document(collection = "full_profile")
 public class SchProfileThree {
 	
 	@Id

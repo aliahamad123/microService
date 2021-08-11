@@ -19,7 +19,7 @@ public interface MasterOuterService {
 	public List<StateBean> fetchStateByStateId(@PathVariable("stateId")Integer stateId);
 	
 	@GetMapping(value = "/getSchMasterDataBySchId/{schoolId}")
-	public SchoolMaster fetchSchMasterBySchoolId(@PathVariable("schoolId") String schoolId);
+	public SchoolMaster fetchSchMasterBySchoolId(@PathVariable("schoolId") Integer schoolId);
 	
 	@GetMapping(value = "/getVillMasterDataByVillId/{villageWardId}")
 	public VillageWardMaster fetchVillMasterByVillageId(@PathVariable("villageWardId") String villageWardId);

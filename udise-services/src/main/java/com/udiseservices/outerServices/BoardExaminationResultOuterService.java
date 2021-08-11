@@ -4,37 +4,29 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import com.udiseservices.models.BoardExamPrevAcademicYear;
-import com.udiseservices.models.NumOfRegularStudentsPassed;
-import com.udiseservices.models.OthrThanNumOfRegularStudentsPassed;
-import com.udiseservices.models.RsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt;
-import com.udiseservices.models.RsltOfGradeXIIBrdExamPrevAcadYearRgulrStdnt;
-import com.udiseservices.models.RsltOfGradeXIIBrdExamRngOfMarkOthrRgulrStdnt;
-import com.udiseservices.models.RsltOfGradeXIIBrdExamRngOfMarkRgulrStdnt;
+
+import com.udiseservices.models.SchExamMarksGradeX;
+import com.udiseservices.models.SchExamMarksGradeXII;
+import com.udiseservices.models.SchExamResultGradeX;
+import com.udiseservices.models.SchExamResultGradeXII;
+
+
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @FeignClient(name="dcf-service")
 public interface BoardExaminationResultOuterService {
 	
-	@GetMapping(value = "/fetchFacilitiesProvidedChildrenOneToFive/{schoolId}/{year}")
-	public BoardExamPrevAcademicYear fetchBoardExamPreviousAcademicYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	@GetMapping(value = "/fetchSchExamResultGradeX/{schoolId}/{year}")
+	public SchExamResultGradeX fetchSchExamResultGradeX(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year);
 	
-	@GetMapping(value = "/fetchNumOfRegularStudentsPassed/{schoolId}/{year}")
-	public NumOfRegularStudentsPassed fetchNumOfRegularStudentsPassed(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	@GetMapping(value = "/fetchSchExamMarksGradeX/{schoolId}/{year}")
+	public SchExamMarksGradeX fetchSchExamMarksGradeX(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year);
 	
-	@GetMapping(value = "/fetchOthrThanNumOfRegularStudentsPassed/{schoolId}/{year}")
-	public OthrThanNumOfRegularStudentsPassed fetchOthrThanNumOfRegularStudentsPassed(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	@GetMapping(value = "/fetchSchExamResultGradeXII/{schoolId}/{year}")
+	public SchExamResultGradeXII fetchSchExamResultGradeXII(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year);
 	
-	@GetMapping(value = "/fetchRsltOfGradeXIIBrdExamPrevAcadYear/{schoolId}/{year}")
-	public RsltOfGradeXIIBrdExamPrevAcadYearRgulrStdnt fetchRsltOfGradeXIIBrdExamPrevAcadYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	@GetMapping(value = "/fetchSchExamMarksGradeXII/{schoolId}/{year}")
+	public SchExamMarksGradeXII fetchSchExamMarksGradeXII(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year);
 	
-	@GetMapping(value = "/fetchRsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt/{schoolId}/{year}")
-	public RsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt fetchRsltOfGradeXIIBrdExamPrevAcadYearOthrRgulrStdnt(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
 	
-	@GetMapping(value = "/fetchRsltOfGradeXIIBrdExamRngOfMarkRgulrStdnt/{schoolId}/{year}")
-	public RsltOfGradeXIIBrdExamRngOfMarkRgulrStdnt fetchRsltOfGradeXIIBrdExamRngOfMarkRgulrStdnt(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
-	
-	@GetMapping(value = "/fetchRsltOfGradeXIIBrdExamRngOfMarkOthrRgulrStdnt/{schoolId}/{year}")
-	public RsltOfGradeXIIBrdExamRngOfMarkOthrRgulrStdnt fetchRsltOfGradeXIIBrdExamRngOfMarkOthrRgulrStdnt(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
-
 }

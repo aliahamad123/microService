@@ -26,10 +26,12 @@ public class UdiseSchSafetyController {
 	SchSafetyOuterService schSafetyOuterService;
 	private SchSafety schSafetyData;
 
-	@GetMapping(value = "/getSchProfileOneData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchSafetyData(@PathVariable("schoolId") String schoolId,
+	@GetMapping(value = "/fetchSchSafety/{schoolId}/{year}")
+	public CommenResponseBean fetchSchSafetyData(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 
+		System.out.println("Ali" + schoolId + "year" +year);
+		
 		SchsafetyBean schSafetyBeanData = new SchsafetyBean();
 		DataBean data = new DataBean();
 		CommenResponseBean schSafetyResponseBean = new CommenResponseBean();

@@ -12,7 +12,7 @@ public class SchoolMaster {
 private String _id;
 	
 @Field(value = "school_id")
-private String schoolId;
+private Integer schoolId;
 	
 @Field(value = "udise_sch_code")
 private String udiseSchCode;
@@ -169,11 +169,13 @@ public void set_id(String _id) {
 	this._id = _id;
 }
 
-public String getSchoolId() {
+
+
+public Integer getSchoolId() {
 	return schoolId;
 }
 
-public void setSchoolId(String schoolId) {
+public void setSchoolId(Integer schoolId) {
 	this.schoolId = schoolId;
 }
 

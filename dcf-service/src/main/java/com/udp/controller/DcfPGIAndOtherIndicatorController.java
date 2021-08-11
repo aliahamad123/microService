@@ -20,7 +20,9 @@ public class DcfPGIAndOtherIndicatorController {
 	MongoTemplate mongoTemplate;
 
 	@GetMapping(value = "/fetchPGIAndOtherIndicator/{schoolId}/{year}")
-	public PGIAndOtherIndicator fetchPGIAndOtherIndicator(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+	public PGIAndOtherIndicator fetchPGIAndOtherIndicator(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
+		System.out.println("--------------------------------------pgi and indicator");
+	//	Integer schId = Integer.parseInt(schoolId);
 		Query query = new Query();
 		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		PGIAndOtherIndicator pGIAndOtherIndicatorData = mongoTemplate.findOne(query, PGIAndOtherIndicator.class);

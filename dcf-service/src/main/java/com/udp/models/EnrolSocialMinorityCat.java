@@ -1,7 +1,5 @@
 package com.udp.models;
 
-import java.util.Date;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -24,6 +22,9 @@ public class EnrolSocialMinorityCat {
 
 	@Field(name = "item_id")
 	private String itemId;
+	
+	@Field(name = "ac_year")
+	private String acYear;
 
 	@Field(name = "cpp_b")
 	private String cppBoys;
@@ -109,8 +110,6 @@ public class EnrolSocialMinorityCat {
 	@Field(name = "modified_time")
 	private String modifiedTime;
 
-	@Field(name = "ac_year")
-	private String acYear;
 	
 	public String get_id() {
 		return _id;

@@ -2,7 +2,7 @@ package com.udiseservices.beans;
 
 public class UdiseSchFacilityOneBean {
 	private String _id;
-	private String schoolId;
+	private Integer schoolId;
 	private String udiseSchCode;
 	private String acYear;
 	private String buildStatus;
@@ -78,11 +78,11 @@ public class UdiseSchFacilityOneBean {
 		this._id = _id;
 	}
 
-	public String getSchoolId() {
+	public Integer getSchoolId() {
 		return schoolId;
 	}
 
-	public void setSchoolId(String schoolId) {
+	public void setSchoolId(Integer schoolId) {
 		this.schoolId = schoolId;
 	}
 

@@ -4,7 +4,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "teacherInstraction")
+//@Document(collection = "teacherInstraction")
+@Document(collection = "full_teacher")
 public class TeacherProfileTwo {
 	
 	@Id
@@ -13,6 +14,9 @@ public class TeacherProfileTwo {
 
 	@Field(name = "school_id")
 	private Integer schoolId;
+	
+	@Field(name = "ac_year")
+	private String acYear;
 
 	@Field(name = "udise_sch_code")
 	private String udiseSchCode;
@@ -145,6 +149,17 @@ public class TeacherProfileTwo {
 
 	@Field(name = "modified_time")
 	private String modifiedTime;
+	
+	
+	
+
+	public String getAcYear() {
+		return acYear;
+	}
+
+	public void setAcYear(String acYear) {
+		this.acYear = acYear;
+	}
 
 	public String get_id() {
 		return _id;

@@ -41,7 +41,7 @@ public class SchAdmissionEnrolReptr {
 	private AdmissionGradeOne obj;
 
 	@GetMapping(value = "/fetchAdmissionEnrolReptrData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchAdmissionEnrolReptr(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+	public CommenResponseBean fetchSchAdmissionEnrolReptr(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 
 		AdmissionGradeOneBean admissionGradeOneBean = new AdmissionGradeOneBean();
 		// List<TeacherProfileTwoBean> teacherInstr = new
@@ -104,7 +104,7 @@ public class SchAdmissionEnrolReptr {
 	}
 
 	@GetMapping(value = "/fetchEnrolSocialMinorityData/{schoolId}/{year}")
-	public CommenResponseBean fetchEnrolSocialMinority(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public CommenResponseBean fetchEnrolSocialMinority(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		List<UdiseEnrolSocialMinorityCatBean> enrolSocialMinorityCatdata = new ArrayList<UdiseEnrolSocialMinorityCatBean>();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
 		CombineDCFData combineDCFData = new CombineDCFData();
@@ -172,7 +172,7 @@ public class SchAdmissionEnrolReptr {
 	}
 
 	@GetMapping(value = "/fetchEnrolByGradeByAgeData/{schoolId}/{year}")
-	public CommenResponseBean fetchEnrolByGradeByAge(@PathVariable("schoolId") String schoolId , @PathVariable("year") String year) {
+	public CommenResponseBean fetchEnrolByGradeByAge(@PathVariable("schoolId") Integer schoolId , @PathVariable("year") String year) {
 		List<UdiseEnrolByGradeByAgeBean> enrolByGradeByAgedata = new ArrayList<UdiseEnrolByGradeByAgeBean>();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
 		CombineDCFData combineDCFData = new CombineDCFData();
@@ -244,7 +244,7 @@ public class SchAdmissionEnrolReptr {
 	}
 
 	@GetMapping(value = "/fetchEnrolByMediumOfInstData/{schoolId}/{year}")
-	public CommenResponseBean fetchEnrolByMediumOfInst(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public CommenResponseBean fetchEnrolByMediumOfInst(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		List<UdiseEnrolByMediumOfInstBean> enrolByMediumOfInstdata = new ArrayList<UdiseEnrolByMediumOfInstBean>();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
 		CombineDCFData combineDCFData = new CombineDCFData();
@@ -317,7 +317,7 @@ public class SchAdmissionEnrolReptr {
 
 	@SuppressWarnings("unlikely-arg-type")
 	@GetMapping(value = "/fetchReptrSocialMinorityCatData/{schoolId}/{year}")
-	public CommenResponseBean fetchReptrSocialMinorityCat(@PathVariable("schoolId") String schoolId , @PathVariable("year") String year) {
+	public CommenResponseBean fetchReptrSocialMinorityCat(@PathVariable("schoolId") Integer schoolId , @PathVariable("year") String year) {
 		List<UdiseReptrSocialMinorityCatBean> reptrSocialMinorityCatdata = new ArrayList<UdiseReptrSocialMinorityCatBean>();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
 		CombineDCFData combineDCFData = new CombineDCFData();
@@ -393,7 +393,7 @@ public class SchAdmissionEnrolReptr {
 	
 	
 	@GetMapping(value = "/fetchEnrolByCwsnData/{schoolId}/{year}")
-	public CommenResponseBean fetchEnrolByCwsn(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public CommenResponseBean fetchEnrolByCwsn(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		List<UdiseEnrolByCwsnBean> enrolByCwsndata = new ArrayList<UdiseEnrolByCwsnBean>();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
 		CombineDCFData combineDCFData = new CombineDCFData();
@@ -465,7 +465,7 @@ public class SchAdmissionEnrolReptr {
 	
 	
 	@GetMapping(value = "/fetchEnrolReptrByAcademicStreamData/{schoolId}/{year}")
-	public CommenResponseBean fetchEnrolReptrByAcademicStream(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public CommenResponseBean fetchEnrolReptrByAcademicStream(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		List<UdiseEnrolReptrByAcademicStreamBean> enrolReptrByAcademicStreamdata = new ArrayList<UdiseEnrolReptrByAcademicStreamBean>();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
 		CombineDCFData combineDCFData = new CombineDCFData();

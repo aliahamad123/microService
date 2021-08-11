@@ -27,7 +27,7 @@ public class UdiseSchProfileOneBean {
 	private String gramPanchayat; 
 	private String block1;
 	private String HabitationName;
-	private String Block2;
+	private String block2;
 	private String AssemblyConstituency;
 	private String municipalityName;
 	private String cityName;
@@ -99,10 +99,10 @@ public class UdiseSchProfileOneBean {
 		HabitationName = habitationName;
 	}
 	public String getBlock2() {
-		return Block2;
+		return block2;
 	}
 	public void setBlock2(String block2) {
-		Block2 = block2;
+		block2 = block2;
 	}
 	public String getAssemblyConstituency() {
 		return AssemblyConstituency;

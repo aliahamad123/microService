@@ -11,6 +11,6 @@ import com.udiseservices.models.PGIAndOtherIndicator;
 public interface PGIAndOtherIndicatorOuterService {
 	
 	@GetMapping(value = "/fetchPGIAndOtherIndicator/{schoolId}/{year}")
-	public PGIAndOtherIndicator fetchPGIAndOtherIndicator(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public PGIAndOtherIndicator fetchPGIAndOtherIndicator(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 
 }

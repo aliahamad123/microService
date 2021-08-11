@@ -32,56 +32,56 @@ import com.udiseservices.models.EnrolByMediumOfInst;
 public interface ProfileOuterServices {
 	
 	@GetMapping(value = "/fetchSchProfileOne/{schoolId}/{year}")
-	public SchProfileOne fetchSchProfileOne(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchProfileOne fetchSchProfileOne(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchProfileTwo/{schoolId}/{year}")
-	public SchProfileTwo fetchSchProfileTwo(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchProfileTwo fetchSchProfileTwo(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchProfileThree/{schoolId}/{year}")
-	public SchProfileThree fetchSchProfileThree(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchProfileThree fetchSchProfileThree(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchProfileFour/{schoolId}/{year}")
-	public SchProfileFour fetchSchProfileFour(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchProfileFour fetchSchProfileFour(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchManagement/{schoolId}/{year}")
-	public SchManagement fetchSchManagement(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchManagement fetchSchManagement(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchFacilityOne/{schoolId}/{year}")
-	public SchFacilityOne fetchSchFacilityOne(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchFacilityOne fetchSchFacilityOne(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchFacilityTwo/{schoolId}/{year}")
-	public SchFacilityTwo fetchSchFacilityTwo(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchFacilityTwo fetchSchFacilityTwo(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchFacilityThree/{schoolId}/{year}")
-	public SchFacilityThree fetchSchFacilityThree(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchFacilityThree fetchSchFacilityThree(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchFacilityFour/{schoolId}/{year}")
-	public SchFacilityFour fetchSchFacilityFour(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public SchFacilityFour fetchSchFacilityFour(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchTeacherOne/{schoolId}/{year}")
-	public TeacherOne fetchSchTeacherOne(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public TeacherOne fetchSchTeacherOne(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
-	@GetMapping(value = "/fetchSchTeacherProfile/{schoolId}")
-	public List<TeacherProfileTwo> fetchSchTeacherProfile(@PathVariable("schoolId") String schoolId);
+	@GetMapping(value = "/fetchSchTeacherProfile/{schoolId}/{year}")
+	public List<TeacherProfileTwo> fetchSchTeacherProfile(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchSchAdmissionGradeOne/{schoolId}/{year}")
-	public AdmissionGradeOne fetchSchAdmissGrade(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public AdmissionGradeOne fetchSchAdmissGrade(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchEnrolSocialMinority/{schoolId}/{year}")
-	public List<EnrolSocialMinorityCat> fetchEnrolSocialMinority(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year);
-	
-	@GetMapping(value = "/fetchEnrolByGradeByAge/{schoolId}/{year}")
-	public List<EnrolByGradeByAge> fetchEnrolByGradeByAge(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year);
-	
-	@GetMapping(value = "/fetchEnrolByMediumOfInst/{schoolId}/{year}")
-	public List<EnrolByMediumOfInst> fetchEnrolByMediumOfInst(@PathVariable("schoolId") String schoolId , @PathVariable("year") String year);
+	public List<EnrolSocialMinorityCat> fetchEnrolSocialMinority(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchReptrSocialMinorityCat/{schoolId}/{year}")
-	public List<ReptrSocialMinorityCat> fetchReptrSocialMinorityCat(@PathVariable("schoolId") String schoolId , @PathVariable("year") String year);
+	public List<ReptrSocialMinorityCat> fetchReptrSocialMinorityCat(@PathVariable("schoolId") Integer schoolId , @PathVariable("year") String year);
+	
+	@GetMapping(value = "/fetchEnrolByGradeByAge/{schoolId}/{year}")
+	public List<EnrolByGradeByAge> fetchEnrolByGradeByAge(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year);
+	
+	@GetMapping(value = "/fetchEnrolByMediumOfInst/{schoolId}/{year}")
+	public List<EnrolByMediumOfInst> fetchEnrolByMediumOfInst(@PathVariable("schoolId") Integer schoolId , @PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchEnrolByCwsn/{schoolId}/{year}")
-	public List<EnrolByCwsn> fetchEnrolByCwsn(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year);
+	public List<EnrolByCwsn> fetchEnrolByCwsn(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year);
 	
 	@GetMapping(value = "/fetchEnrolReptrByAcademicStream/{schoolId}/{year}")
-	public List<EnrolReptrByAcademicStream> fetchEnrolReptrByAcademicStream(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year);
+	public List<EnrolReptrByAcademicStream> fetchEnrolReptrByAcademicStream(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year);
 }

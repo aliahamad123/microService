@@ -2,6 +2,8 @@ package com.udiseservices.models;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.udiseservices.utility.StaticMasterUtilityMethodes;
+
 public class SchSafety {
 	
 	@Field(value ="_id")
@@ -99,7 +101,7 @@ public class SchSafety {
 	}
 
 	public String getUdiseSchCode() {
-		return udiseSchCode;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(udiseSchCode);
 	}
 
 	public void setUdiseSchCode(String udiseSchCode) {
@@ -115,7 +117,7 @@ public class SchSafety {
 	}
 
 	public String getSdmpPlanYn() {
-		return sdmpPlanYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(sdmpPlanYn);
 	}
 
 	public void setSdmpPlanYn(String sdmpPlanYn) {
@@ -123,7 +125,7 @@ public class SchSafety {
 	}
 
 	public String getStructSafaudYn() {
-		return structSafaudYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(structSafaudYn);
 	}
 
 	public void setStructSafaudYn(String structSafaudYn) {
@@ -131,7 +133,7 @@ public class SchSafety {
 	}
 
 	public String getNonstrSafaudYn() {
-		return nonstrSafaudYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(nonstrSafaudYn);
 	}
 
 	public void setNonstrSafaudYn(String nonstrSafaudYn) {
@@ -139,7 +141,7 @@ public class SchSafety {
 	}
 
 	public String getFireExtYn() {
-		return fireExtYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(fireExtYn);
 	}
 
 	public void setFireExtYn(String fireExtYn) {
@@ -147,7 +149,7 @@ public class SchSafety {
 	}
 
 	public String getSaftyTrngYn() {
-		return saftyTrngYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(saftyTrngYn);
 	}
 
 	public void setSaftyTrngYn(String saftyTrngYn) {
@@ -155,7 +157,7 @@ public class SchSafety {
 	}
 
 	public String getDismgmtTaugYn() {
-		return dismgmtTaugYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(dismgmtTaugYn);
 	}
 
 	public void setDismgmtTaugYn(String dismgmtTaugYn) {
@@ -163,7 +165,7 @@ public class SchSafety {
 	}
 
 	public String getSlfdefGrtYn() {
-		return slfdefGrtYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(slfdefGrtYn);
 	}
 
 	public void setSlfdefGrtYn(String slfdefGrtYn) {
@@ -171,7 +173,7 @@ public class SchSafety {
 	}
 
 	public String getSlfdefTrained() {
-		return slfdefTrained;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(slfdefTrained);
 	}
 
 	public void setSlfdefTrained(String slfdefTrained) {
@@ -179,7 +181,7 @@ public class SchSafety {
 	}
 
 	public String getExtraColumn1() {
-		return extraColumn1;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(extraColumn1);
 	}
 
 	public void setExtraColumn1(String extraColumn1) {
@@ -211,7 +213,7 @@ public class SchSafety {
 	}
 
 	public String getCctvCamYn() {
-		return cctvCamYn;
+		return  StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(cctvCamYn);
 	}
 
 	public void setCctvCamYn(String cctvCamYn) {
@@ -219,7 +221,7 @@ public class SchSafety {
 	}
 
 	public String getNodalTchYn() {
-		return nodalTchYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(nodalTchYn);
 	}
 
 	public void setNodalTchYn(String nodalTchYn) {
@@ -227,7 +229,7 @@ public class SchSafety {
 	}
 
 	public String getGuideDisplayYn() {
-		return guideDisplayYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(guideDisplayYn);
 	}
 
 	public void setGuideDisplayYn(String guideDisplayYn) {
@@ -235,7 +237,7 @@ public class SchSafety {
 	}
 
 	public String getTchRcvdGrantYn() {
-		return tchRcvdGrantYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(tchRcvdGrantYn);
 	}
 
 	public void setTchRcvdGrantYn(String tchRcvdGrantYn) {
@@ -243,7 +245,7 @@ public class SchSafety {
 	}
 
 	public String getGuidanceYn() {
-		return guidanceYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(guidanceYn);
 	}
 
 	public void setGuidanceYn(String guidanceYn) {
@@ -251,7 +253,7 @@ public class SchSafety {
 	}
 
 	public String getSensitizeYn() {
-		return sensitizeYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(sensitizeYn);
 	}
 
 	public void setSensitizeYn(String sensitizeYn) {
@@ -259,7 +261,7 @@ public class SchSafety {
 	}
 
 	public String getStuAwarenessYn() {
-		return stuAwarenessYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(stuAwarenessYn);
 	}
 
 	public void setStuAwarenessYn(String stuAwarenessYn) {
@@ -267,7 +269,7 @@ public class SchSafety {
 	}
 
 	public String getStuFeedbackYn() {
-		return stuFeedbackYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(stuFeedbackYn);
 	}
 
 	public void setStuFeedbackYn(String stuFeedbackYn) {
@@ -275,7 +277,7 @@ public class SchSafety {
 	}
 
 	public String getCompBoxYn() {
-		return compBoxYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(compBoxYn);
 	}
 
 	public void setCompBoxYn(String compBoxYn) {
@@ -283,7 +285,7 @@ public class SchSafety {
 	}
 
 	public String getGuideToStuYn() {
-		return guideToStuYn;
+		return StaticMasterUtilityMethodes.checkResComLabPlayGCWSNYesNo(guideToStuYn);
 	}
 
 	public void setGuideToStuYn(String guideToStuYn) {

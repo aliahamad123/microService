@@ -71,7 +71,7 @@ public class UdiseProfileOneController {
 	private String schType;
 
 	@GetMapping(value = "/getSchProfileOneData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchProfileOne(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchProfileOne(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		System.out.println("Ali..................................................");
 		System.out.println("School Id is " + schoolId + " year is " + year);
@@ -131,6 +131,8 @@ public class UdiseProfileOneController {
 				profile1.setEmail(profileData.getEmail());
 				profile1.setAcYear(profileData.getAcYear());
 				profile1.setRespName(profileData.getRespName());
+				profile1.setBlock1(profileData.getBlock1());
+				profile1.setBlock2(profileData.getBlock2());
 		}
 		profile1.setSchName(schoolName);
 		profile1.setLocation(location);
@@ -161,7 +163,7 @@ public class UdiseProfileOneController {
 	}
 
 	@GetMapping(value = "/getSchProfileThreeData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchProfileThree(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchProfileThree(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		UdiseSchProfileThreeBean language = new UdiseSchProfileThreeBean();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
@@ -244,7 +246,7 @@ public class UdiseProfileOneController {
 	}
 
 	@GetMapping(value = "/getSchProfileTwoData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchProfileTwo(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchProfileTwo(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		UdiseSchProfileTwoBean categoryObj = new UdiseSchProfileTwoBean();
 		CommenResponseBean profileResponseBean = new CommenResponseBean();
@@ -340,7 +342,7 @@ public class UdiseProfileOneController {
 	}
 
 	@GetMapping(value = "/getschManagementData/{schoolId}/{year}")
-	public CommenResponseBean fetchschManagement(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchschManagement(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		System.out.println("Ali..................................................");
 
@@ -438,7 +440,7 @@ public class UdiseProfileOneController {
 	}
 
 	@GetMapping(value = "/getSchProfileFourData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchProfileFour(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchProfileFour(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		System.out.println("Ali..................................................");
 

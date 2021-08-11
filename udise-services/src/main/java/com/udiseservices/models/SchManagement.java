@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection ="sch_profile_5")
+@Document(collection ="full_profile")
 public class SchManagement {
 
 	@Id

@@ -33,7 +33,7 @@ public class TeacherController {
 	private List<TeacherProfileTwo> teacherTwoData;
 
 	@GetMapping(value = "/fetchSchTeacherOneData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchTeacherOne(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+	public CommenResponseBean fetchSchTeacherOne(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 		
 		TeacherOneBean techAndNonTechStaff = new TeacherOneBean();
 		List<TeacherProfileTwoBean> teacherInstr = new ArrayList<TeacherProfileTwoBean>();
@@ -50,7 +50,7 @@ public class TeacherController {
 		}
 
 		try {
-			teacherTwoData = profileOuterService.fetchSchTeacherProfile(tempId);
+			teacherTwoData = profileOuterService.fetchSchTeacherProfile(schoolId,year);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

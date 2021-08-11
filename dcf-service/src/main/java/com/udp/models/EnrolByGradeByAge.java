@@ -17,6 +17,9 @@ public class EnrolByGradeByAge {
 	@Field(name = "udise_sch_code")
 	private String udiseSchCode;
 
+	@Field(name = "ac_year")
+	private String acYear;
+
 	@Field(name = "age_id")
 	private String ageId;
 
@@ -107,8 +110,7 @@ public class EnrolByGradeByAge {
 	@Field(name = "modified_time")
 	private String modifiedTime;
 
-	@Field(name = "ac_year")
-	private String acYear;
+	
 
 	public String get_id() {
 		return _id;

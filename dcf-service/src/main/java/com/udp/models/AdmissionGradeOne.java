@@ -16,6 +16,9 @@ public class AdmissionGradeOne {
 
 	@Field(name = "udise_sch_code")
 	private String udiseSchCode;
+	
+	@Field(name = "ac_year")
+	private String acYear;
 
 	@Field(name = "age4_b")
 	private String age4Boys;
@@ -89,7 +92,16 @@ public class AdmissionGradeOne {
 	@Field(name = "modified_time")
 	private String modifiedTime;
 	
+
 	
+	public String getAcYear() {
+		return acYear;
+	}
+
+	public void setAcYear(String acYear) {
+		this.acYear = acYear;
+	}
+
 	public String getPpstuLkgBoys() {
 		return ppstuLkgBoys;
 	}

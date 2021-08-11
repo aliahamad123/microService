@@ -16,6 +16,9 @@ public class AdmissionGradeOne {
 
 	@Field(name = "udise_sch_code")
 	private String udiseSchCode;
+	
+	@Field(name = "ac_year")
+	private String acYear;
 
 	@Field(name = "age4_b")
 	private String age4Boys;
@@ -58,6 +61,21 @@ public class AdmissionGradeOne {
 
 	@Field(name = "oth_sch_g")
 	private String othSchGirls;
+	
+	@Field(name = "tot_admit")
+	private String totAdmit;
+	
+	@Field(name = "c1_b")
+	private String c1Boys;
+	
+	@Field(name = "c1_g")
+	private String c1Girls;
+	
+	@Field(name = "c1_b_r")
+	private String c1BoysRept;
+	
+	@Field(name = "c1_g_r")
+	private String c1GirlsRept;
 
 	@Field(name = "anganwadi_b")
 	private String anganwadiBoys;
@@ -92,6 +110,54 @@ public class AdmissionGradeOne {
 	
 
 	
+	public String getAcYear() {
+		return acYear;
+	}
+
+	public void setAcYear(String acYear) {
+		this.acYear = acYear;
+	}
+
+	public String getTotAdmit() {
+		return totAdmit;
+	}
+
+	public void setTotAdmit(String totAdmit) {
+		this.totAdmit = totAdmit;
+	}
+
+	public String getC1Boys() {
+		return c1Boys;
+	}
+
+	public void setC1Boys(String c1Boys) {
+		this.c1Boys = c1Boys;
+	}
+
+	public String getC1Girls() {
+		return c1Girls;
+	}
+
+	public void setC1Girls(String c1Girls) {
+		this.c1Girls = c1Girls;
+	}
+
+	public String getC1BoysRept() {
+		return c1BoysRept;
+	}
+
+	public void setC1BoysRept(String c1BoysRept) {
+		this.c1BoysRept = c1BoysRept;
+	}
+
+	public String getC1GirlsRept() {
+		return c1GirlsRept;
+	}
+
+	public void setC1GirlsRept(String c1GirlsRept) {
+		this.c1GirlsRept = c1GirlsRept;
+	}
+
 	public String getPpstuLkgBoys() {
 		return ppstuLkgBoys;
 	}

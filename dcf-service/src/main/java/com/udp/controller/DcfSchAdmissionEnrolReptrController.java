@@ -29,7 +29,7 @@ public class DcfSchAdmissionEnrolReptrController {
 	MongoTemplate mongoTemplate;
 	
 	@GetMapping(value = "/fetchSchAdmissionGradeOne/{schoolId}/{year}")
-	public AdmissionGradeOne fetchSchAdmissGrade(@PathVariable("schoolId") String schoolId,String year) {
+	public AdmissionGradeOne fetchSchAdmissGrade(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 		Query query = new Query();
 		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		//with(Sort.by(Direction.ASC, "acYear"));
@@ -37,24 +37,28 @@ public class DcfSchAdmissionEnrolReptrController {
 		return admissionGradeOneDataList;
 	}
 	@GetMapping(value = "/fetchEnrolSocialMinority/{schoolId}/{year}")
-	public List<EnrolSocialMinorityCat> fetchEnrolSocialMinority(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public List<EnrolSocialMinorityCat> fetchEnrolSocialMinority(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
-		query.addCriteria(Criteria.where("acYear").is(year));
-//		.with(Sort.by(Direction.ASC, "acYear"));
-		List<EnrolSocialMinorityCat> enrolSocialMinorityCat = mongoTemplate.find(query, EnrolSocialMinorityCat.class,"admissionSocialCatMinority");
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
+		List<EnrolSocialMinorityCat> enrolSocialMinorityCat = mongoTemplate.find(query, EnrolSocialMinorityCat.class);
 		return enrolSocialMinorityCat;
+		
+	}
+	
+	@GetMapping(value = "/fetchReptrSocialMinorityCat/{schoolId}/{year}")
+	public List<ReptrSocialMinorityCat> fetchReptrSocialMinorityCat(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
+		List<ReptrSocialMinorityCat> reptrSocialMinorityCat = mongoTemplate.find(query, ReptrSocialMinorityCat.class,"reptrSocialMinorityCat");
+		return reptrSocialMinorityCat;
 		
 	}
 	
 	
 	@GetMapping(value = "/fetchEnrolByGradeByAge/{schoolId}/{year}")
-	public List<EnrolByGradeByAge> fetchEnrolByGradeByAge(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public List<EnrolByGradeByAge> fetchEnrolByGradeByAge(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
-		query.addCriteria(Criteria.where("acYear").is(year));
-//		.with(Sort.by(Direction.ASC, "acYear"));
-//		query.with(Sort.by(Direction.DESC,"age_id"));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		List<EnrolByGradeByAge> enrolByGradeByAge = mongoTemplate.find(query, EnrolByGradeByAge.class,"enrolByGradeByAge");
 		return enrolByGradeByAge;
 		
@@ -62,35 +66,20 @@ public class DcfSchAdmissionEnrolReptrController {
 	
 	
 	@GetMapping(value = "/fetchEnrolByMediumOfInst/{schoolId}/{year}")
-	public List<EnrolByMediumOfInst> fetchEnrolByMediumOfInst(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public List<EnrolByMediumOfInst> fetchEnrolByMediumOfInst(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
-		query.addCriteria(Criteria.where("acYear").is(year));
-//		.with(Sort.by(Direction.ASC, "acYear"));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		List<EnrolByMediumOfInst> enrolByMediumOfInst = mongoTemplate.find(query, EnrolByMediumOfInst.class,"enrolByMediumOfInst");
 		return enrolByMediumOfInst;
 		
 	}
 
 	
-	@GetMapping(value = "/fetchReptrSocialMinorityCat/{schoolId}/{year}")
-	public List<ReptrSocialMinorityCat> fetchReptrSocialMinorityCat(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
-		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
-		query.addCriteria(Criteria.where("acYear").is(year));
-//		.with(Sort.by(Direction.ASC, "acYear"));
-		List<ReptrSocialMinorityCat> reptrSocialMinorityCat = mongoTemplate.find(query, ReptrSocialMinorityCat.class,"reptrSocialMinorityCat");
-		return reptrSocialMinorityCat;
-		
-	}
-	
 	
 	@GetMapping(value = "/fetchEnrolByCwsn/{schoolId}/{year}")
-	public List<EnrolByCwsn> fetchEnrolByCwsn(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public List<EnrolByCwsn> fetchEnrolByCwsn(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
-		query.addCriteria(Criteria.where("acYear").is(year));
-//		.with(Sort.by(Direction.ASC, "acYear"));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		List<EnrolByCwsn> enrolByCwsn = mongoTemplate.find(query, EnrolByCwsn.class,"enrolByCwsn");
 		return enrolByCwsn;
 		
@@ -98,12 +87,10 @@ public class DcfSchAdmissionEnrolReptrController {
 	
 	
 	@GetMapping(value = "/fetchEnrolReptrByAcademicStream/{schoolId}/{year}")
-	public List<EnrolReptrByAcademicStream> fetchEnrolReptrByAcademicStream(@PathVariable("schoolId") String schoolId, @PathVariable("year") String year) {
+	public List<EnrolReptrByAcademicStream> fetchEnrolReptrByAcademicStream(@PathVariable("schoolId") Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId));
-		query.addCriteria(Criteria.where("acYear").is(year));
-//		.with(Sort.by(Direction.ASC, "acYear"));
-		List<EnrolReptrByAcademicStream> enrolReptrByAcademicStream = mongoTemplate.find(query, EnrolReptrByAcademicStream.class,"enrolReptrByAcademicStreams");
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
+		List<EnrolReptrByAcademicStream> enrolReptrByAcademicStream = mongoTemplate.find(query, EnrolReptrByAcademicStream.class);
 		return enrolReptrByAcademicStream;
 		
 	}

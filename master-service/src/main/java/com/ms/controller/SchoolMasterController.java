@@ -33,7 +33,7 @@ public class SchoolMasterController {
 	MongoTemplate mongoTemplate;
 
 	@GetMapping(value = "/getSchMasterDataBySchId/{schoolId}")
-	public SchoolMaster fetchSchMasterBySchoolId(@PathVariable("schoolId") String schoolId) {
+	public SchoolMaster fetchSchMasterBySchoolId(@PathVariable("schoolId") Integer schoolId) {
 		System.out.println("Ali..................................................");
 		System.out.println("Inside School Master  Controller");
 		Query query = new Query();

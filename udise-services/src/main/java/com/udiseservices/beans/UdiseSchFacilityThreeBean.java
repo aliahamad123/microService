@@ -5,7 +5,7 @@ import com.udiseservices.utility.StaticMasterUtilityMethodes;
 public class UdiseSchFacilityThreeBean {
 	
 	private String _id;
-	private String schoolId;
+	private Integer schoolId;
 	private String udiseSchCode;
 	private String acYear;
 	private String ahmvpRoomYN;
@@ -53,11 +53,11 @@ public class UdiseSchFacilityThreeBean {
 		this._id = _id;
 	}
 
-	public String getSchoolId() {
+	public Integer getSchoolId() {
 		return schoolId;
 	}
 
-	public void setSchoolId(String schoolId) {
+	public void setSchoolId(Integer schoolId) {
 		this.schoolId = schoolId;
 	}
 

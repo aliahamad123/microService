@@ -38,7 +38,7 @@ public class UdiseFacilityController {
 	private SchFacilityFour schIctAndDigitalFacilityObj;
 
 	@GetMapping(value = "/fetchSchFacilityToiletData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchFacilityToiletData(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchFacilityToiletData(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 
 		UdiseSchFacilityTwoBean toiletObj = new UdiseSchFacilityTwoBean();
@@ -183,7 +183,7 @@ public class UdiseFacilityController {
 	}
 
 	@GetMapping(value = "/fetchSchFacilityOneData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchFacilityOne(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchFacilityOne(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 
 		UdiseSchFacilityOneBean classRoomObj = new UdiseSchFacilityOneBean();
@@ -264,7 +264,7 @@ public class UdiseFacilityController {
 	}
 
 	@GetMapping(value = "/fetchSchPhysicalFacilityData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchPhysicalFacility(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchPhysicalFacility(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		
 		UdiseSchFacilityThreeBean physicalFacilityobj = new UdiseSchFacilityThreeBean();
@@ -340,7 +340,7 @@ public class UdiseFacilityController {
 	}
 	
 	@GetMapping(value = "/fetchSchIctAndDigitalFacilityTwoData/{schoolId}/{year}")
-	public CommenResponseBean fetchSchIctAndDigitalFacility(@PathVariable("schoolId") String schoolId,
+	public CommenResponseBean fetchSchIctAndDigitalFacility(@PathVariable("schoolId") Integer schoolId,
 			@PathVariable("year") String year) {
 		
 		UdiseSchFacilityFourBean ictAndDigitalObj = new UdiseSchFacilityFourBean();

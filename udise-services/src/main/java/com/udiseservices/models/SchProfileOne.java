@@ -44,6 +44,12 @@ public class SchProfileOne {
 
 	@Field(name = "email")
 	private String email;
+	
+	@Field(name = "block1")
+	private String block1;
+
+	@Field(name = "block2")
+	private String block2;
 
 	@Field(name = "created_by")
 	private String createdBy1819;
@@ -66,6 +72,24 @@ public class SchProfileOne {
 	@Transient
 	private String SchName;
 	
+	
+	
+
+	public String getBlock1() {
+		return block1;
+	}
+
+	public void setBlock1(String block1) {
+		this.block1 = block1;
+	}
+
+	public String getBlock2() {
+		return block2;
+	}
+
+	public void setBlock2(String block2) {
+		this.block2 = block2;
+	}
 
 	public String getSchName() {
 		return SchName;

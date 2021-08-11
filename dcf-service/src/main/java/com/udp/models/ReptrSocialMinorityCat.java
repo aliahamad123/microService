@@ -13,6 +13,9 @@ public class ReptrSocialMinorityCat {
 
 	@Field(name = "school_id")
 	private Integer schoolId;
+	
+	@Field(name = "ac_year")
+	private String acYear;
 
 	@Field(name = "udise_sch_code")
 	private String udiseSchCode;
@@ -107,8 +110,7 @@ public class ReptrSocialMinorityCat {
 	@Field(name = "modified_time")
 	private String modifiedTime;
 
-	@Field(name = "ac_year")
-	private String acYear;
+	
 
 	public String get_id() {
 		return _id;
