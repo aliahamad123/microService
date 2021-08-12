@@ -12,9 +12,9 @@ import com.udiseservices.models.SchIncentivesFacilitiesProd;
 public interface IncentivesFacilitiesProvidedChildrenOuterService {
 	
 	@GetMapping(value = "/fetchSchIncentivesFacilitiesProd/{schoolId}/{year}")
-	public SchIncentivesFacilitiesProd fetchSchIncentivesFacilitiesProd(@PathVariable("schoolId") String schoolId,@PathVariable("year") String yearId);
+	public SchIncentivesFacilitiesProd fetchSchIncentivesFacilitiesProd(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String yearId);
 	
 	@GetMapping(value = "/fetchFacilitiesProvidedCwsn/{schoolId}/{year}")
-	public IncentivesFacilitiesProvidedCwsn fetchFacilitiesProvidedCwsn(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year);
+	public IncentivesFacilitiesProvidedCwsn fetchFacilitiesProvidedCwsn(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year);
 
 }

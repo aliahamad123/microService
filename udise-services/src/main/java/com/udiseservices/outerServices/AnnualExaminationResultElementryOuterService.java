@@ -14,9 +14,9 @@ import com.udiseservices.models.AnnualExaminationResultElementryGrdVIII;
 public interface AnnualExaminationResultElementryOuterService {
 	
 	@GetMapping(value = "/fetchAnnualExaminationResultElementryGrdV/{schoolId}/{year}")
-	public AnnualExaminationResultElementryGrdV fetchAnnualExaminationResultElementryGrdV(@PathVariable("schoolId") String schoolId ,@PathVariable("year") String yearId);
+	public AnnualExaminationResultElementryGrdV fetchAnnualExaminationResultElementryGrdV(@PathVariable("schoolId") Integer schoolId ,@PathVariable("year") String yearId);
 	
 	@GetMapping(value = "/fetchAnnualExaminationResultElementryGrdVIII/{schoolId}/{year}")
-	public AnnualExaminationResultElementryGrdVIII fetchAnnualExaminationResultElementryGrdVIII(@PathVariable("schoolId") String schoolId ,@PathVariable("year") String yearId);
+	public AnnualExaminationResultElementryGrdVIII fetchAnnualExaminationResultElementryGrdVIII(@PathVariable("schoolId") Integer schoolId ,@PathVariable("year") String yearId);
 
 }

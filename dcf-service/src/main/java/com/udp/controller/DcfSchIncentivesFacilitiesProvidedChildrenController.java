@@ -20,10 +20,10 @@ public class DcfSchIncentivesFacilitiesProvidedChildrenController {
 	MongoTemplate mongoTemplate;
 	
 	@GetMapping(value = "/fetchSchIncentivesFacilitiesProd/{schoolId}/{year}")
-	public SchIncentivesFacilitiesProd fetchSchIncentivesFacilitiesProd(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+	public SchIncentivesFacilitiesProd fetchSchIncentivesFacilitiesProd(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 		
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchIncentivesFacilitiesProd schIncentivesFacilitiesProdData =mongoTemplate.findOne(query, SchIncentivesFacilitiesProd.class);
 		return schIncentivesFacilitiesProdData;
 
@@ -41,9 +41,9 @@ public class DcfSchIncentivesFacilitiesProvidedChildrenController {
 //	}
 //	
 	@GetMapping(value = "/fetchFacilitiesProvidedCwsn/{schoolId}/{year}")
-	public IncentivesFacilitiesProvidedCwsn fetchFacilitiesProvidedCwsn(@PathVariable("schoolId") String schoolId,@PathVariable("year") String year) {
+	public IncentivesFacilitiesProvidedCwsn fetchFacilitiesProvidedCwsn(@PathVariable("schoolId") Integer schoolId,@PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		IncentivesFacilitiesProvidedCwsn incentivesFacilitiesProvidedCwsn =mongoTemplate.findOne(query, IncentivesFacilitiesProvidedCwsn.class);
 		return incentivesFacilitiesProvidedCwsn;
 

@@ -19,10 +19,10 @@ public class DcfReceiptsAndExpenditureController {
 	MongoTemplate mongoTemplate;
 	
 	@GetMapping(value = "/fetchSchoolfundReceivFinancialYear/{schoolId}/{year}")
-	public SchReceiptsAndExpenditure fetchSchoolfundReceivFinancialYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year) {
+	public SchReceiptsAndExpenditure fetchSchoolfundReceivFinancialYear(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year) {
 		
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchReceiptsAndExpenditure SchReceiptsAndExpenditureData = mongoTemplate.findOne(query, SchReceiptsAndExpenditure.class);
 		return SchReceiptsAndExpenditureData;
 	}

@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "")
+@Document(collection = "sch_Exam_Result_Class8")
 public class AnnualExaminationResultElementryGrdVIII {
 	
 	@Id

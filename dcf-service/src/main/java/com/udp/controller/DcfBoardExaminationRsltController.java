@@ -23,7 +23,7 @@ public class DcfBoardExaminationRsltController {
 	@GetMapping(value = "/fetchSchExamResultGradeX/{schoolId}/{year}")
 	public SchExamResultGradeX fetchSchExamResultGradeX(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchExamResultGradeX schExamResultGradeXData = mongoTemplate.findOne(query, SchExamResultGradeX.class);
 		return schExamResultGradeXData;
 		
@@ -32,7 +32,7 @@ public class DcfBoardExaminationRsltController {
 	@GetMapping(value = "/fetchSchExamMarksGradeX/{schoolId}/{year}")
 	public SchExamMarksGradeX fetchSchExamMarksGradeX(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchExamMarksGradeX schExamMarksGradeXnData = mongoTemplate.findOne(query, SchExamMarksGradeX.class);
 		return schExamMarksGradeXnData;
 		
@@ -41,7 +41,7 @@ public class DcfBoardExaminationRsltController {
 	@GetMapping(value = "/fetchSchExamResultGradeXII/{schoolId}/{year}")
 	public SchExamResultGradeXII fetchSchExamResultGradeXII(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchExamResultGradeXII schExamResultGradeXIIData = mongoTemplate.findOne(query, SchExamResultGradeXII.class);
 		return schExamResultGradeXIIData;
 		
@@ -50,7 +50,7 @@ public class DcfBoardExaminationRsltController {
 	@GetMapping(value = "/fetchSchExamMarksGradeXII/{schoolId}/{year}")
 	public SchExamMarksGradeXII fetchSchExamMarksGradeXII(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year) {
 		Query query = new Query();
-		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("year").is(year));
+		query.addCriteria(Criteria.where("schoolId").is(schoolId).and("acYear").is(year));
 		SchExamMarksGradeXII schExamMarksGradeXIIData = mongoTemplate.findOne(query, SchExamMarksGradeXII.class);
 		return schExamMarksGradeXIIData;
 		

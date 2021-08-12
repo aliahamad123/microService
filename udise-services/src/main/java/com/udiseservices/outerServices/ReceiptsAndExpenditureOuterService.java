@@ -15,7 +15,7 @@ import com.udiseservices.models.SchoolfundReceivFinancialYear201718ExcludMDM;
 public interface ReceiptsAndExpenditureOuterService {
 	
 	@GetMapping(value = "/fetchSchoolfundReceivFinancialYear/{schoolId}/{year}")
-	public SchReceiptsAndExpenditure fetchSchoolfundReceivFinancialYear(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
+	public SchReceiptsAndExpenditure fetchSchoolfundReceivFinancialYear(@PathVariable("schoolId")Integer schoolId, @PathVariable("year") String year);
 	
 //	@GetMapping(value = "/fetchSchoolfundReceivFinancialYear201718ExcludMDM/{schoolId}/{year}")
 //	public SchoolfundReceivFinancialYear201718ExcludMDM fetchSchoolfundReceivFinancialYear201718ExcludMDM(@PathVariable("schoolId")String schoolId, @PathVariable("year") String year);
